@@ -1,0 +1,28 @@
+{
+    "name" : "heartbeat/sdk-master-api",
+    "description": "Heartbeat Master API SDK",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Basil Suter",
+            "email": "basil@heartbeat.gmbh"
+        }
+    ],
+    "require": {
+        "luyadev/luya-headless": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~6.0.0",
+        "vlucas/phpdotenv" : "^2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Heartbeat\\Master\\" : "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Heartbeat\\Master\\Test\\" : "test/"
+        }
+    }
+}

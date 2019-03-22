@@ -1,0 +1,4 @@
+/vendor
+/luya
+/.env
+/test/.env
