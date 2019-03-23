@@ -15,4 +15,16 @@ class EventDateTest extends SdkMasterApiTestCase
 
         $this->assertNotEmpty(count($tags->getModels()));
     }
+
+    public function testFindBlogTroughBlumenEvents()
+    {
+        $listing = Listing::findEventDates(['club'])->all($this->getClient());
+        $tags = EventDate::findByTags($listing)->setExpand(['event'])->all($this->getClient());
+
+        foreach ($tags->getModels() as $tag) {
+            $allDatesForAnEvent = $tag->event->findEventDates()->all($this->getClient());
+
+            $this->assertNotNull(count($allDatesForAnEvent->getModels()));
+        }
+    }
 }

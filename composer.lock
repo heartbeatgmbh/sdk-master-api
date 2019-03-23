@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "318143fd5e6d7ab5fecd16520e9cd322",
+    "content-hash": "7c57f833b8984c3a2daeacbb3ce684a9",
     "packages": [
         {
             "name": "curl/curl",
@@ -63,16 +63,16 @@
         },
         {
             "name": "luyadev/luya-headless",
-            "version": "1.2.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/luyadev/luya-headless.git",
-                "reference": "a0ae6812e516e28a842049e31ac3d56c053db7c0"
+                "reference": "193b1ad902ae7e90e48621260226fa011974b14a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/luyadev/luya-headless/zipball/a0ae6812e516e28a842049e31ac3d56c053db7c0",
-                "reference": "a0ae6812e516e28a842049e31ac3d56c053db7c0",
+                "url": "https://api.github.com/repos/luyadev/luya-headless/zipball/193b1ad902ae7e90e48621260226fa011974b14a",
+                "reference": "193b1ad902ae7e90e48621260226fa011974b14a",
                 "shasum": ""
             },
             "require": {
@@ -117,7 +117,7 @@
                 "php",
                 "yii2"
             ],
-            "time": "2019-03-19T14:56:12+00:00"
+            "time": "2019-03-23T19:54:55+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -1484,7 +1484,7 @@
                 },
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "email": "backendtea@gmail.com"
                 }
             ],
             "description": "Symfony polyfill for ctype functions",
@@ -1642,7 +1642,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "luyadev/luya-headless": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

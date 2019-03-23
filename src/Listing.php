@@ -27,4 +27,9 @@ class Listing extends ActiveEndpoint
     {
         return self::find()->setEndpoint('{endpointName}/eventdates')->setArgs(['tags' => implode(",", $tags)]);
     }
+
+    public function findBlogs(array $tags)
+    {
+        return self::find()->setEndpoint('{endpointName}/blogs')->setArgs(['tags' => implode(",", $tags)]);
+    }
 }

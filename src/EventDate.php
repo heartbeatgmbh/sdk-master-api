@@ -22,6 +22,7 @@ use luya\headless\endpoint\ActiveEndpointResponse;
 class EventDate extends ActiveEndpoint
 {
     public $id;
+    public $event_id;
     public $start_timestamp;
     public $end_timestamp;
     public $extra_text;
@@ -35,13 +36,6 @@ class EventDate extends ActiveEndpoint
     public function getEndpointName()
     {
         return '{{%eventdates}}';
-    }
-
-    public static function find()
-    {
-        return parent::find()->setContentProcessor(function($content) {
-            return isset($content['items']) ? $content['items'] : $content;
-        });
     }
 
     private $_event;
