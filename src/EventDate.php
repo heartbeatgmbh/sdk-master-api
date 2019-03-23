@@ -3,6 +3,8 @@
 namespace Heartbeat\Master;
 
 use luya\headless\ActiveEndpoint;
+use luya\headless\Client;
+use luya\headless\endpoint\ActiveEndpointResponse;
 
 /**
  * Event Date Active Endpoint.
@@ -10,6 +12,9 @@ use luya\headless\ActiveEndpoint;
  * Contains the Event Date informations.
  * 
  * The meta informations about events are stored in Event.
+ * 
+ * Expands:
+ * - event
  * 
  * @author Basil Suter <basil@nadar.io>
  * @since 1.0.0
@@ -49,5 +54,20 @@ class EventDate extends ActiveEndpoint
     public function getEvent()
     {
         return new Event($this->_event);
+    }
+
+    public function findByIds(array $ids)
+    {
+        return self::find()->setEndpoint('{endpointName}/items/'.implode(",", $ids));
+    }
+
+    public function findByTags(ActiveEndpointResponse $listing)
+    {
+        $ids = [];
+        foreach ($listing->getModels() as $item) {
+            $ids[] = $item->eventdate_id;
+        }
+
+        return self::findByIds($ids);
     }
 }
