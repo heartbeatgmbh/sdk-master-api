@@ -50,7 +50,7 @@ class EventDate extends ActiveEndpoint
         return new Event($this->_event);
     }
 
-    public function findByIds(array $ids)
+    public static function findByIds(array $ids)
     {
         return self::find()->setEndpoint('{endpointName}/items/'.implode(",", $ids));
     }

@@ -21,4 +21,9 @@ class Blog extends ActiveEndpoint
     {
         return self::view($id)->setEndpoint('{endpointName}/preview/{id}');
     }
+
+    public static function findByIds(array $ids)
+    {
+        return self::find()->setEndpoint('{endpointName}/items/'.implode(",", $ids));
+    }
 }
